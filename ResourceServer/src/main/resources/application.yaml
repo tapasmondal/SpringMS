@@ -1,0 +1,30 @@
+---
+# Items that apply to ALL profiles:
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/
+#      defaultZone: http://localhost:8011/eureka/,http://localhost:8012/eureka/,http://localhost:8013/eureka/
+server:
+  port: ${PORT:${SERVER_PORT:0}}   # Select any available port if neither port nor server port are specified.
+
+---
+spring:
+  profiles: dev
+server:
+  port: 8020  
+
+security:
+  oauth2:
+    resource:
+      jwt:
+        keyValue: |
+            -----BEGIN PUBLIC KEY-----
+            MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlpvJt643mh0pGn4qs7XX
+            0r+s7L979Ng2xKExai2gZAu+oNtFydi8E8+IAU4RxYwpH/+2QQfY9DQrk0BPhc5f
+            i2Ml+v635pDw+67so8ysFGviVrr5ok/NxyaIOmKgKFCpzK07HijQ2O2vJJ6ZPLUK
+            XsPiSdF8QRwdVYuXobilRT8bi3fPAQ64UR3tGt3yx8rwt+F99/vokGzN4AB3oso4
+            1m1bSTli6X8IEPUchYQGJbxCHS9o8vgInPpkMNgH4sh6nVj2wpKJvfbVTFPP3/Ww
+            AaqFs//u7PYsFzilM/7OqRnAwKQKiJMPwv2KD/Rc0Ue6VVU0P+gGUakGB3TVxdk4
+            PwIDAQAB
+            -----END PUBLIC KEY-----
